@@ -45,11 +45,6 @@ const movieSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Поле "password" должно быть заполнено'],
   },
-  owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: 'user',
-  },
   movieId: {
     type: Number,
     required: true,
@@ -61,6 +56,15 @@ const movieSchema = new mongoose.Schema({
   nameEN: {
     type: String,
     required: true,
+  },
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'user',
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 }, { versionKey: false });
 

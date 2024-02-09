@@ -9,11 +9,11 @@ const handleAuthError = (next) => {
 
 const extractBearerToken = (header) => header.replace('Bearer ', '');
 
-module.exports.auth = (req, res, next) => {
+module.exports.auth = (req, next) => {
   const { authorization } = req.headers;
 
   if (!authorization || !authorization.startsWith('Bearer ')) {
-    return handleAuthError(res, next);
+    return handleAuthError(next);
   }
 
   const token = extractBearerToken(authorization);
@@ -22,7 +22,7 @@ module.exports.auth = (req, res, next) => {
   try {
     payload = jwt.verify(token, NODE_ENV ? JWT_SECRET : 'super-secret-key');
   } catch (error) {
-    return handleAuthError(res, next);
+    return handleAuthError(next);
   }
 
   req.user = payload;

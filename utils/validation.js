@@ -36,8 +36,8 @@ module.exports.validationCreateMovie = celebrate({
     thumbnail: Joi.string().required().pattern(/^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/),
     owner: Joi.string().required(),
     movieId: Joi.number().required(),
-    nameRU: Joi.string().required().pattern(/^[А-Яа-яЁё\s]+$/),
-    nameEN: Joi.string().required().pattern(/^[a-zA-Z\s]*$/),
+    nameRU: Joi.string().required(),
+    nameEN: Joi.string().required(),
   }),
 });
 

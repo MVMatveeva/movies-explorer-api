@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
+const Movie = require('../models/movie');
 const NotFoundError = require('../middlewares/errors/NotFoundError');
 const BadRequestError = require('../middlewares/errors/BadRequestError');
-const Movie = require('../models/movie');
 const ForbiddenError = require('../middlewares/errors/ForbiddenError');
 
 module.exports.getMovies = (req, res, next) => {
