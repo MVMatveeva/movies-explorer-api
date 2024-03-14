@@ -21,7 +21,10 @@ const allowedCors = [
   'https://localhost:3001',
 ];
 
-app.use(cors(allowedCors));
+app.use(cors({
+  origin: allowedCors,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+}));
 
 mongoose.connect(MONGO_URL);
 
