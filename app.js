@@ -13,8 +13,8 @@ const { PORT, MONGO_URL } = require('./utils/utils');
 const app = express();
 
 const allowedCors = [
-  'http://matveeva.movie.nomoredomainswork.ru',
   'https://matveeva.movie.nomoredomainswork.ru',
+  'http://matveeva.movie.nomoredomainswork.ru',
   'localhost:3000',
   'localhost:3001',
 ];
