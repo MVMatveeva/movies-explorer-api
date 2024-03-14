@@ -1,7 +1,9 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable spaced-comment */
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { errors } = require('celebrate');
 const router = require('./routes');
 const { handleErrorCentralized } = require('./middlewares/handleErrorCentralized');
@@ -9,6 +11,15 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { PORT, MONGO_URL } = require('./utils/utils');
 
 const app = express();
+
+const allowedCors = [
+  'http://matveeva.movie.nomoredomainswork.ru',
+  'https://matveeva.movie.nomoredomainswork.ru',
+  'localhost:3000',
+  'localhost:3001',
+];
+
+app.use(cors(allowedCors));
 
 mongoose.connect(MONGO_URL);
 
