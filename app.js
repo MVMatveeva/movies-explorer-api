@@ -15,8 +15,10 @@ const app = express();
 const allowedCors = [
   'https://matveeva.movie.nomoredomainswork.ru',
   'http://matveeva.movie.nomoredomainswork.ru',
-  'localhost:3000',
-  'localhost:3001',
+  'http://localhost:3000',
+  'http://localhost:3001',
+  'https://localhost:3000',
+  'https://localhost:3001',
 ];
 
 app.use(cors(allowedCors));
