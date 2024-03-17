@@ -5,6 +5,7 @@ const User = require('../models/user');
 const NotFoundError = require('../middlewares/errors/NotFoundError');
 const BadRequestError = require('../middlewares/errors/BadRequestError');
 const ConflictError = require('../middlewares/errors/ConflictError');
+const { NODE_ENV, JWT_SECRET } = require('../utils/utils');
 
 const AUTH_ERROR = 11000;
 
@@ -82,9 +83,7 @@ module.exports.login = (req, res, next) => {
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, 'super-secret-key', {
-        expiresIn: '7d',
-      });
+      const token = jwt.sign({ _id: user._id }, NODE_ENV ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
       res.status(200).send({ token });
     })
     .catch(next);
