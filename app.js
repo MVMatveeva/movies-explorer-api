@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const { errors } = require('celebrate');
 const router = require('./routes');
-const { handleErrorCentralized } = require('./middlewares/handleErrorCentralized');
+//const { handleErrorCentralized } = require('./middlewares/handleErrorCentralized');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { PORT, MONGO_URL } = require('./utils/utils');
 
@@ -43,7 +43,7 @@ app.use(errorLogger);
 
 app.use(errors());
 
-app.use(handleErrorCentralized);
+//app.use(handleErrorCentralized);
 
 app.listen(PORT, () => {
   console.log('Ссылка на сервер');
