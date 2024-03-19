@@ -9,7 +9,7 @@ const handleAuthError = () => {
 
 const extractBearerToken = (header) => header.replace('Bearer ', '');
 
-module.exports.auth = (req, next) => {
+module.exports.auth = (req, res, next) => {
   const { authorization } = req.headers;
 
   if (!authorization || !authorization.startsWith('Bearer ')) {
