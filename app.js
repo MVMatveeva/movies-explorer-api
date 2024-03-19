@@ -43,7 +43,7 @@ app.use(errorLogger);
 
 app.use(errors());
 
-//app.use(handleErrorCentralized);
+app.use(handleErrorCentralized);
 
 app.listen(PORT, () => {
   console.log('Ссылка на сервер');
