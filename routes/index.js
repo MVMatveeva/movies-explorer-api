@@ -19,7 +19,7 @@ router.use('/users', userRouter);
 
 router.use('/movies', movieRouter);
 
-router.use((req, res, next) => {
+router.use((next) => {
   next(new NotFoundError('Пользователь по указанному id не найден'));
 });
 
