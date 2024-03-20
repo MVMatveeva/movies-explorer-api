@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable spaced-comment */
 /* eslint-disable no-useless-escape */
 const router = require('express').Router();
