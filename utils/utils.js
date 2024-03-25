@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 const {
   NODE_ENV = 'production',
-  JWT_SECRET = '5b5f38958016bc8db8d970c157a95221c40bdc4aa4c1231b05b2db5a190749cd',
+  JWT_SECRET = '082f710a180ba4731ebd2ec9c74b399ffccff6d6f6e596472a8a2e4f6eabf7185003dd7c86eb7e06432b3799746475f5bcef9568a6edcbbcc19f883f7ecb02ad',
   PORT = 3000,
   MONGO_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb',
 } = process.env;
