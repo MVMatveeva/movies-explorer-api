@@ -42,6 +42,6 @@ module.exports.validationCreateMovie = celebrate({
 
 module.exports.validationDeleteMovie = celebrate({
   params: Joi.object().keys({
-    filmId: Joi.string().required().length(24).pattern(/^[0-9a-fA-F]{24}$/),
+    movieId: Joi.string().required().length(24).pattern(/^[0-9a-fA-F]{24}$/),
   }),
 });
