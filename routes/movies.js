@@ -12,6 +12,6 @@ movieRouter.get('/', getMovies); //возвращает все сохранён�
 
 movieRouter.post('/', validationCreateMovie, createMovie); //создаёт фильм с переданными в теле country, director, duration, year, description, image, trailer, nameRU, nameEN и thumbnail, movieId
 
-movieRouter.delete('/:movieId ', validationDeleteMovie, deleteMovie); //удаляет сохранённый фильм по id
+movieRouter.delete('/:movieId', validationDeleteMovie, deleteMovie); //удаляет сохранённый фильм по id
 
 module.exports = movieRouter;
