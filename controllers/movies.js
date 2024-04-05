@@ -60,7 +60,7 @@ module.exports.deleteMovie = (req, res, next) => {
         return next(new ForbiddenError('Доступ запрещен'));
       }
       return movie
-        .findByIdAndDelete(movie)
+        .deleteOne(movie)
         .then(() => res.status(200).send({ message: 'Фильм успешно удален' }));
     })
     .catch((error) => {
